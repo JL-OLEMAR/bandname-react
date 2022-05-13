@@ -1,6 +1,5 @@
-import React from 'react'
-import HomePage from './pages/HomePage'
-import { SocketProvider } from './context/SocketContext'
+import { HomePage } from './pages/HomePage.js'
+import { SocketProvider } from './context/SocketContext.js'
 
 export const BandNamesApp = () => {
   return (

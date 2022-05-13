@@ -2,11 +2,12 @@ import { useEffect, useMemo, useState } from 'react'
 import io from 'socket.io-client'
 
 export const useSocket = (serverPath) => {
-  const socket = useMemo(() => io.connect(serverPath, {
-    transports: ['websocket'] // Tipo de comunicación al servidor. v3 de io
-  }), [serverPath])
-
   const [online, setOnline] = useState(false)
+
+  const socket = useMemo(
+    () => io.connect(serverPath, { transports: ['websocket'] }), // → Tipo de comunicación al servidor. v3 de io
+    [serverPath]
+  )
 
   useEffect(() => {
     setOnline(socket.connected)
@@ -24,8 +25,5 @@ export const useSocket = (serverPath) => {
     })
   }, [socket])
 
-  return {
-    socket,
-    online
-  }
+  return { socket, online }
 }

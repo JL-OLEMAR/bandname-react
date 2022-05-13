@@ -1,9 +1,6 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import { BandNamesApp } from './BandNamesApp'
 
-ReactDOM.render(
-  <BandNamesApp />,
-  document.getElementById('root')
-)
+import { BandNamesApp } from './BandNamesApp.js'
+import './index.css'
+
+ReactDOM.render(<BandNamesApp />, document.getElementById('root'))

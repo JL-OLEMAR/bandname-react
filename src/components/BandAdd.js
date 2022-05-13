@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react'
-import { SocketContext } from '../context/SocketContext'
+import { useContext, useState } from 'react'
 
-export const BandAdd = () => {
+import { SocketContext } from '../context/SocketContext.js'
+
+export function BandAdd() {
   const [valor, setValor] = useState('')
   const { socket } = useContext(SocketContext)
 
@@ -20,8 +21,8 @@ export const BandAdd = () => {
 
       <form onSubmit={onSubmit}>
         <input
-          className="form-control"
-          placeholder="Nuevo nombre de banda"
+          className='form-control'
+          placeholder='Nuevo nombre de banda'
           value={valor}
           onChange={(ev) => setValor(ev.target.value)}
         />
